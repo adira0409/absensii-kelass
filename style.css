@@ -1,0 +1,583 @@
+/* =================================
+   DASAR WEBSITE
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fb;
+    color: #183b60;
+    line-height: 1.6;
+}
+
+/* =================================
+   HEADER
+================================= */
+
+.header {
+    background: #103b66;
+    color: white;
+    padding: 18px 5%;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 75px;
+    height: 75px;
+    min-width: 75px;
+    background: linear-gradient(135deg, #45d6a0, #2388a9);
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.brand h1 {
+    font-size: 25px;
+}
+
+.brand h1 span {
+    color: #45d6a0;
+}
+
+.brand p {
+    font-size: 12px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 17px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #45d6a0;
+}
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+    min-height: 430px;
+    background: linear-gradient(120deg, #103b66, #2588a9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: #45d6a0;
+    color: #103b66;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: 40px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.hero h2 span {
+    color: #45d6a0;
+}
+
+.hero p {
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-block;
+    background: #45d6a0;
+    color: #103b66;
+    padding: 14px 30px;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero-button:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+/* =================================
+   SECTION
+================================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 25px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: #103b66;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: #718096;
+    font-size: 14px;
+}
+
+/* =================================
+   DAFTAR KELAS
+================================= */
+
+.kelas-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.kelas-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.kelas-header {
+    background: #103b66;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 17px;
+}
+
+.kelas-header h3 {
+    font-size: 21px;
+}
+
+.kelas-header p {
+    font-size: 12px;
+    color: #dce9f7;
+}
+
+.kelas-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.kelas-list button {
+    border: 1px solid #dce8f4;
+    background: #edf5fc;
+    color: #103b66;
+    padding: 13px 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.kelas-list button:hover,
+.kelas-list button.active {
+    background: #45d6a0;
+    border-color: #45d6a0;
+}
+
+.kelas-terpilih {
+    margin-top: 25px;
+    background: #e1f6ed;
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+}
+
+.kelas-terpilih span {
+    display: block;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.kelas-terpilih h3 {
+    font-size: 23px;
+    color: #103b66;
+}
+
+/* =================================
+   DASHBOARD
+================================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.dashboard-date {
+    max-width: 350px;
+    margin: 0 auto 25px;
+}
+
+.dashboard-date label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.dashboard-note {
+    margin-top: 18px;
+    text-align: center;
+    color: #718096;
+    font-size: 12px;
+}
+
+.stat-card {
+    text-align: center;
+    color: white;
+    padding: 25px 12px;
+    border-radius: 13px;
+}
+
+.stat-card p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.stat-card h3 {
+    font-size: 35px;
+    margin-top: 7px;
+}
+
+.blue {
+    background: #2385d5;
+}
+
+.green {
+    background: #20b982;
+}
+
+.orange {
+    background: #e6a32b;
+}
+
+.purple {
+    background: #8065c9;
+}
+
+.red {
+    background: #e05252;
+}
+
+/* =================================
+   FORM
+================================= */
+
+.form-card {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 27px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.selected-info {
+    background: #eaf5ff;
+    color: #245d85;
+    padding: 13px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+input,
+select {
+    display: block;
+    width: 100%;
+    height: 48px;
+    border: 1px solid #d6e0eb;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    background: white;
+    color: #183b60;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #b5e7d4;
+    border-color: #20b982;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* =================================
+   BUTTON
+================================= */
+
+.button {
+    border: none;
+    padding: 13px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.primary {
+    background: #103b66;
+    color: white;
+}
+
+.secondary {
+    background: #64748b;
+    color: white;
+}
+
+.download {
+    background: #20b982;
+    color: white;
+}
+
+.full-width {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.report-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* =================================
+   TABEL
+================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 25px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e5eaf1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+th {
+    background: #103b66;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f8fc;
+}
+
+tbody button {
+    background: #e05252;
+    color: white;
+    border: none;
+    padding: 8px 13px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    background: #103b66;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+footer h2 {
+    color: #45d6a0;
+    margin-bottom: 8px;
+}
+
+footer small {
+    display: block;
+    margin-top: 18px;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 900px) {
+
+    .header-container {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .kelas-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* =================================
+   HP
+================================= */
+
+@media (max-width: 600px) {
+
+    .header-container {
+        flex-direction: column;
+    }
+
+    .brand img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .logo-icon {
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
+    }
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 380px;
+    }
+
+    .hero h2 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 45px 15px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .kelas-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat-card h3 {
+        font-size: 29px;
+    }
+
+    .form-card {
+        padding: 20px 15px;
+    }
+
+    .report-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .report-buttons button {
+        width: 100%;
+    }
+}
