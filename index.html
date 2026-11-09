@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#103b66">
+    <title>ABSENSIKU - Sistem Absensi Sekolah</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+
+        <div class="brand">
+            <div class="logo-icon">
+                <svg viewBox="0 0 100 100"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <rect x="18" y="23" width="64" height="62"
+                          rx="10" fill="#ffffff"/>
+                    <rect x="18" y="23" width="64" height="18"
+                          rx="8" fill="#45d6a0"/>
+                    <path d="M34 15 V31 M66 15 V31"
+                          stroke="#ffffff" stroke-width="6"
+                          stroke-linecap="round"/>
+                    <path d="M32 59 L44 70 L68 48"
+                          fill="none" stroke="#103b66"
+                          stroke-width="7" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+            </div>
+
+            <div>
+                <h1>ABSENSI<span>KU</span></h1>
+                <p>Sistem Informasi Absensi Sekolah</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#kelas">Daftar Kelas</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#siswa">Data Siswa</a>
+            <a href="#absensi">Absensi</a>
+            <a href="#laporan">Laporan</a>
+        </nav>
+
+    </div>
+</header>
+
+<!-- BERANDA -->
+<section class="hero" id="beranda">
+    <div class="hero-content">
+
+        <span class="badge">SISTEM INFORMASI SEKOLAH</span>
+
+        <h2>
+            Selamat Datang di<br>
+            <span>ABSENSIKU</span>
+        </h2>
+
+        <p>
+            Sistem informasi absensi siswa untuk memudahkan
+            pencatatan kehadiran kelas 10, 11, dan 12
+            SMK Swasta Prama Artha.
+        </p>
+
+        <a href="#kelas" class="hero-button">Pilih Kelas</a>
+
+    </div>
+</section>
+
+<main>
+
+    <!-- DAFTAR KELAS -->
+    <section class="section" id="kelas">
+
+        <div class="section-heading">
+            <h2>Daftar Kelas</h2>
+            <p>Silakan pilih kelas yang akan melakukan absensi.</p>
+        </div>
+
+        <div class="kelas-container">
+
+            <div class="kelas-card">
+                <div class="kelas-header">
+                    <h3>KELAS 10</h3>
+                    <p>7 Pilihan Kelas</p>
+                </div>
+
+                <div class="kelas-list">
+                    <button onclick="pilihKelas('X RPL 1')">X RPL 1</button>
+                    <button onclick="pilihKelas('X RPL 2')">X RPL 2</button>
+                    <button onclick="pilihKelas('X RPL 3')">X RPL 3</button>
+                    <button onclick="pilihKelas('X MPLB')">X MPLB</button>
+                    <button onclick="pilihKelas('X AKL')">X AKL</button>
+                    <button onclick="pilihKelas('X TSM 1')">X TSM 1</button>
+                    <button onclick="pilihKelas('X TSM 2')">X TSM 2</button>
+                </div>
+            </div>
+
+            <div class="kelas-card">
+                <div class="kelas-header">
+                    <h3>KELAS 11</h3>
+                    <p>6 Pilihan Kelas</p>
+                </div>
+
+                <div class="kelas-list">
+                    <button onclick="pilihKelas('XI RPL 1')">XI RPL 1</button>
+                    <button onclick="pilihKelas('XI RPL 2')">XI RPL 2</button>
+                    <button onclick="pilihKelas('XI AKL')">XI AKL</button>
+                    <button onclick="pilihKelas('XI MPLB')">XI MPLB</button>
+                    <button onclick="pilihKelas('XI TSM 1')">XI TSM 1</button>
+                    <button onclick="pilihKelas('XI TSM 2')">XI TSM 2</button>
+                </div>
+            </div>
+
+            <div class="kelas-card">
+                <div class="kelas-header">
+                    <h3>KELAS 12</h3>
+                    <p>5 Pilihan Kelas</p>
+                </div>
+
+                <div class="kelas-list">
+                    <button onclick="pilihKelas('XII RPL 1')">XII RPL 1</button>
+                    <button onclick="pilihKelas('XII RPL 2')">XII RPL 2</button>
+                    <button onclick="pilihKelas('XII MPLB')">XII MPLB</button>
+                    <button onclick="pilihKelas('XII TSM 1')">XII TSM 1</button>
+                    <button onclick="pilihKelas('XII TSM 2')">XII TSM 2</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="kelas-terpilih">
+            <span>Kelas yang dipilih</span>
+            <h3 id="kelasAktif">Belum memilih kelas</h3>
+        </div>
+
+    </section>
+
+    <!-- DASHBOARD -->
+    <section class="section" id="dashboard">
+
+        <div class="section-heading">
+            <h2>Dashboard Absensi</h2>
+            <p>Ringkasan kehadiran berdasarkan tanggal yang dipilih.</p>
+        </div>
+
+        <div class="dashboard-date">
+            <label for="tanggal">Tanggal Dashboard</label>
+            <input type="date" id="tanggal">
+        </div>
+
+        <div class="dashboard-grid">
+
+            <div class="stat-card blue">
+                <p>Total Siswa</p>
+                <h3 id="totalMurid">0</h3>
+            </div>
+
+            <div class="stat-card green">
+                <p>Hadir</p>
+                <h3 id="jumlahHadir">0</h3>
+            </div>
+
+            <div class="stat-card orange">
+                <p>Sakit</p>
+                <h3 id="jumlahSakit">0</h3>
+            </div>
+
+            <div class="stat-card purple">
+                <p>Izin</p>
+                <h3 id="jumlahIzin">0</h3>
+            </div>
+
+            <div class="stat-card red">
+                <p>Alpa</p>
+                <h3 id="jumlahAlpa">0</h3>
+            </div>
+
+        </div>
+
+        <p class="dashboard-note">
+            Catatan: Dashboard menghitung status absensi yang sudah disimpan.
+            Siswa yang belum mengisi belum otomatis dihitung Alpa.
+        </p>
+
+    </section>
+
+    <!-- DATA SISWA -->
+    <section class="section" id="siswa">
+
+        <div class="section-heading">
+            <h2>Data Siswa</h2>
+            <p>Tambahkan nama siswa sesuai kelas yang dipilih.</p>
+        </div>
+
+        <div class="form-card">
+
+            <div class="selected-info">
+                Kelas aktif:
+                <strong id="kelasSiswa">Belum memilih kelas</strong>
+            </div>
+
+            <label for="namaMuridBaru">Nama Siswa</label>
+
+            <input
+                type="text"
+                id="namaMuridBaru"
+                placeholder="Masukkan nama siswa"
+                maxlength="100"
+            >
+
+            <button class="button primary full-width"
+                    onclick="tambahSiswa()">
+                + Tambah Siswa
+            </button>
+
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama Siswa</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="daftarMurid"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- ABSENSI -->
+    <section class="section" id="absensi">
+
+        <div class="section-heading">
+            <h2>Form Absensi</h2>
+            <p>Catat kehadiran siswa dengan mudah.</p>
+        </div>
+
+        <div class="form-card">
+
+            <div class="selected-info">
+                Kelas aktif:
+                <strong id="kelasAbsensi">Belum memilih kelas</strong>
+            </div>
+
+            <div class="form-group">
+                <label for="tanggalAbsensi">Tanggal</label>
+                <input type="date" id="tanggalAbsensi">
+            </div>
+
+            <div class="form-group">
+                <label for="namaSiswa">Nama Siswa</label>
+                <select id="namaSiswa">
+                    <option value="">Pilih nama siswa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status Kehadiran</label>
+                <select id="status">
+                    <option value="Hadir">Hadir</option>
+                    <option value="Sakit">Sakit</option>
+                    <option value="Izin">Izin</option>
+                    <option value="Alpa">Alpa</option>
+                </select>
+            </div>
+
+            <button class="button primary full-width"
+                    onclick="simpanAbsensi()">
+                Simpan Absensi
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- LAPORAN -->
+    <section class="section" id="laporan">
+
+        <div class="section-heading">
+            <h2>Laporan Absensi</h2>
+            <p>Lihat riwayat kehadiran siswa.</p>
+        </div>
+
+        <div class="form-card">
+
+            <div class="selected-info">
+                Kelas aktif:
+                <strong id="kelasLaporan">Belum memilih kelas</strong>
+            </div>
+
+            <div class="form-group">
+                <label for="filterTanggal">Filter Tanggal</label>
+                <input type="date" id="filterTanggal">
+            </div>
+
+            <div class="report-buttons">
+
+                <button class="button secondary" onclick="resetFilter()">
+                    Semua Data
+                </button>
+
+                <button class="button primary" onclick="tampilkanLaporan()">
+                    Terapkan
+                </button>
+
+                <button class="button download" onclick="downloadCSV()">
+                    Download CSV
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Tanggal</th>
+                        <th>Kelas</th>
+                        <th>Nama Siswa</th>
+                        <th>Status</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tabelAbsensi"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <h2>ABSENSIKU</h2>
+    <p>Sistem Informasi Absensi Siswa</p>
+    <p>SMK Swasta Prama Artha</p>
+    <p>Kelas 10 • Kelas 11 • Kelas 12</p>
+    <small>© 2026 ABSENSIKU</small>
+</footer>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
